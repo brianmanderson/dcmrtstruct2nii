@@ -29,7 +29,7 @@ class RtStructInputAdapter(AbstractInputAdapter):
             :return: multidimensional array with ROI(s)
         '''
         try:
-            rt_struct_image = pydicom.read_file(input_file)
+            rt_struct_image = pydicom.dcmread(input_file)
 
             if not hasattr(rt_struct_image, 'StructureSetROISequence'):
                 raise InvalidDicomError()

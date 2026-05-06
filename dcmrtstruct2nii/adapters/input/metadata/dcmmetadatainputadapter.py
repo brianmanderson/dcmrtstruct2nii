@@ -23,7 +23,7 @@ class DcmMetadataInputAdapter(AbstractInputAdapter):
             # we probably want to use this in the future, once we start refactoring: [field for field in dir(dicom) if len(field) > 0 and field[0].isupper()]
             dicoms = []
             for i in range(0, len(dicom_file_names)):
-                dicoms.append(pydicom.read_file(dicom_file_names[i]))
+                dicoms.append(pydicom.dcmread(dicom_file_names[i]))
             return dicoms
             # we should refactor this so that it maps based on the objects fields and values
         except (IsADirectoryError, InvalidDicomError):

@@ -1,0 +1,13 @@
+# Conformance threshold overrides for dcmrtstruct2nii vs rtmask-conformance defaults.
+#
+# Empty on purpose. After the first CI run, if a primitive lands just under
+# the published default for understandable reasons (e.g. cube volume_rel_err
+# from boundary-inclusive rasterization in scikit-image's polygon()), document
+# the relaxation here with a date, the metric, and the path back to the
+# published default. See the header of DicomRTTool's tests/conformance.yaml
+# (https://github.com/brianmanderson/Dicom_RT_and_Images_to_Mask/blob/main/tests/conformance.yaml)
+# for the canonical example.
+#
+# Per-primitive overrides shallow-merge over `defaults`, which themselves
+# shallow-merge over the package-shipped defaults.
+schema_version: 1

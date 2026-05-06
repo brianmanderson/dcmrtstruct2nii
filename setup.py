@@ -29,6 +29,15 @@ setup(
         'termcolor>=2.2.0',
         'tqdm>=4.66.1',
     ],
+    extras_require={
+        # Opt-in conformance gate against rtmask-conformance's analytic GT.
+        # Install via: pip install -e .[conformance]
+        # Requires Python >= 3.10 (rtmask-conformance constraint); pip will
+        # refuse to install the extra on older interpreters.
+        'conformance': [
+            'rtmask-conformance @ git+https://github.com/brianmanderson/RTMaskConformanceTest',
+        ],
+    },
     entry_points={
         'console_scripts': [
             'dcmrtstruct2nii=dcmrtstruct2nii.cli.dcmrtstruct2nii:run',
